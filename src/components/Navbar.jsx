@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { motion, animate } from "framer-motion";
 
 function Navbar({ role, onLogout }) {
   const navLinkStyle = ({ isActive }) => {
@@ -35,15 +36,32 @@ function Navbar({ role, onLogout }) {
             About Me
           </NavLink>
         </div>
-        <div className="">
-          <NavLink
-            to={"/"}
-            className="rounded-md py-3 px-5 bg-orange-600 text-white font-semibold
-            hover:bg-orange-800 hover:text-white/50
-            transition transition-colors duration-200 ease-out"
+        <div className="relative isolate flex items-center justify-center">
+          {/* 1. Elemen Lingkaran Cahaya (Glow) */}
+          <motion.a
+            href="mailto:gilangbenediktus24@.com"
+            // Class dasar: relative, overflow-hidden, dan styling tombol biasa
+            className="relative inline-flex items-center justify-center px-6 py-3 border border-orange-600 font-bold text-white text-sm rounded-lg overflow-hidden group shadow-[0_0_15px_rgba(234,88,12,0.3)] hover:shadow-[0_0_25px_rgba(234,88,12,0.5)] transition-shadow"
+            // 1. Mikro-interaksi Framer Motion (Fisika Pegas)
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            Contact
-          </NavLink>
+            {/* 2. LAPISAN PSEUDO-ELEMENT: Efek Glow Berputar (CSS Animation) */}
+            {/* content: "" wajib untuk pseudo-element. animate-spin memutar gradasi kerucut */}
+            <span
+              className="absolute -inset-[150%] bg-[conic-gradient(from_0deg,transparent,#ea580c,#ea580c,transparent)] 
+              blur-xl opacity-100 animate-[spin_4s_linear_infinite] z-[-1] group-hover:opacity-100 transition-opacity duration-300"
+              aria-hidden="true"
+            />
+            {/* 3. LAPISAN SOLID: Latar belakang oranye utama tombol */}
+            {/* Ini untuk menutupi bagian tengah gradasi kerucut */}
+            <span
+              className="absolute -inset-[100%] bg-[conic-gradient(from_0deg,transparent,transparent,#cf6b19,transparent)] opacity-100 animate-[spin_4s_linear_infinite] z-[-1]"
+              aria-hidden="true"
+            />
+            Reach Me!
+          </motion.a>
         </div>
       </div>
     </nav>
