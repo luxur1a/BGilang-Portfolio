@@ -19,7 +19,7 @@ function Navbar({ role, onLogout }) {
         className="flex flex-cols justify-between items-center
       h-full py-4 px-8 font-techno text-white/70 font-semibold "
       >
-        <div className="">
+        <div className="text-xl">
           <NavLink to="/" className="text-white">
             Benedict<span className="text-orange-600 text-lg">'s</span>
           </NavLink>

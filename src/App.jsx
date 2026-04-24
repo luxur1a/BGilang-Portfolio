@@ -17,12 +17,9 @@ function App() {
   const location = useLocation();
 
   return (
-    // UBAH BARIS INI: Ganti h-screen dengan min-h-screen, hapus overflow-hidden, tambah flex & flex-col
-    <div className="relative min-h-screen flex flex-col bg-[#0a0a0a] text-white font-mono overflow-x-hidden">
+    <div className="relative min-h-screen flex flex-col bg-gray-950 text-white font-mono overflow-x-hidden ">
       <Navbar />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/15 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Tambahkan flex-grow di sini agar konten mengisi ruang kosong dan mendorong footer ke bawah */}
       <main className="flex-grow">
         <AnimatePresence mode="wait">
           <Routes>

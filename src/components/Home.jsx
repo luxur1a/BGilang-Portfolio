@@ -5,6 +5,7 @@ function Home() {
   return (
     <PageTransition>
       <div className="min-h-screen bg-gray-950 text-white font-sans selection:bg-orange-600 selection:text-white">
+        <div className="absolute top-1/2 left-1 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/40 blur-[120px] rounded-full pointer-events-none" />
         {/* --- HERO SECTION --- */}
         <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-2 overflow-hidden">
           {/* (Glow Effect) */}
@@ -22,10 +23,11 @@ function Home() {
               Specialized in full-stack development and 3D interactive web
               experiences.
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/fullstack-portfolio"
-                className="px-8 py-4 bg-orange-600 hover:bg-orange-500 font-semibold rounded-lg transition-all"
+                className="px-8 py-4 bg-orange-600 hover:bg-orange-500 font-semibold rounded-lg transition-all
+                items-start"
               >
                 View My Work
               </Link>
