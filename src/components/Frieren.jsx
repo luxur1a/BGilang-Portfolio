@@ -10,6 +10,21 @@ import { useStore } from "../Store.jsx";
 export function Model(props) {
   const { nodes, materials } = useGLTF("/Frieren.glb");
   const isWireframe = useStore((state) => state.isWireframe);
+  const setStats = useStore((state) => state.setStats);
+
+  useEffect(() => {
+    let totalTris = 0;
+    let totalVerts = 0;
+
+    Object.values(nodes).forEach((node) => {
+      if (node.isMesh) {
+        totalTris += node.geometry.index ? node.geometry.index.count / 3 : 0;
+        totalVerts += node.geometry.attributes.position.count;
+      }
+    });
+
+    setStats({ tris: totalTris, vertices: totalVerts });
+  }, [nodes, setStats]);
 
   return (
     <group {...props} dispose={null}>

@@ -6,4 +6,7 @@ export const useStore = create((set) => ({
 
   // Fungsi untuk mengubah nilai (Toggle)
   toggleWireframe: () => set((state) => ({ isWireframe: !state.isWireframe })),
+
+  modelStats: { tris: 0, vertices: 0 },
+  setStats: (stats) => set({ modelStats: stats }),
 }));
