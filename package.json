@@ -1,5 +1,5 @@
 {
-  "name": "bgilangportfolio",
+  "name": "B.Gilang's Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,6 +14,7 @@
     "@react-three/fiber": "^9.6.0",
     "@tailwindcss/vite": "^4.2.4",
     "@types/three": "^0.184.0",
+    "framer-motion": "^12.38.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-router-dom": "^7.14.2",
